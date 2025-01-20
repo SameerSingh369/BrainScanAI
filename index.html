@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: midnightblue;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .brain-pattern {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            opacity: 0.4;
+        }
+        .brain-1 { top: 10%; left: 10%; animation: float1 6s infinite linear; }
+        .brain-2 { top: 60%; left: 80%; animation: float2 12.5s infinite linear; }
+        .brain-3 { top: 80%; left: 20%; animation: float3 7s infinite linear; }
+        .brain-4 { top: 30%; left: 60%; animation: float4 11.5s infinite linear; }
+        .brain-5 { top: 70%; left: 50%; animation: float5 8s infinite linear; }
+        .brain-6 { top: 10%; left: 10%; animation: float1 10.5s infinite linear; }
+        .brain-7 { top: 60%; left: 80%; animation: float2 9s infinite linear; }
+        .brain-8 { top: 80%; left: 20%; animation: float3 9.5s infinite linear; }
+        .brain-9 { top: 30%; left: 60%; animation: float4 10s infinite linear; }
+        .brain-10 { top: 70%; left: 50%; animation: float5 8.5s infinite linear; }
+        .brain-11 { top: 10%; left: 10%; animation: float1 11s infinite linear; }
+        .brain-12 { top: 60%; left: 80%; animation: float2 7.5s infinite linear; }
+        .brain-13 { top: 80%; left: 20%; animation: float3 12s infinite linear; }
+        .brain-14 { top: 30%; left: 60%; animation: float4 6.5s infinite linear; }
+        .brain-15 { top: 70%; left: 50%; animation: float5 13s infinite linear; }
+        .brain-1 path { stroke: #FF6B6B; filter: drop-shadow(0 0 10px #FF6B6B); }
+        .brain-2 path { stroke: #4ECDC4; filter: drop-shadow(0 0 5px #4ECDC4); }
+        .brain-3 path { stroke: #FFE66D; filter: drop-shadow(0 0 5px #FFE66D); }
+        .brain-4 path { stroke: #FF69B4; filter: drop-shadow(0 0 5px #FF69B4); }
+        .brain-6 path { stroke: #7ED957; filter: drop-shadow(0 0 5px #7ED957); }
+        .brain-7 path { stroke: #FF6B6B; filter: drop-shadow(0 0 5px #FF6B6B); }
+        .brain-8 path { stroke: #4ECDC4; filter: drop-shadow(0 0 5px #4ECDC4); }
+        .brain-9 path { stroke: #FFE66D; filter: drop-shadow(0 0 5px #FFE66D); }
+        .brain-10 path { stroke: #FF69B4; filter: drop-shadow(0 0 5px #FF69B4); }
+        .brain-15 path { stroke: #7ED957; filter: drop-shadow(0 0 5px #7ED957); }
+        .brain-11 path { stroke: #FF6B6B; filter: drop-shadow(0 0 5px #FF6B6B); }
+        .brain-12 path { stroke: #4ECDC4; filter: drop-shadow(0 0 5px #4ECDC4); }
+        .brain-13 path { stroke: #FFE66D; filter: drop-shadow(0 0 5px #FFE66D); }
+        .brain-14 path { stroke: #FF69B4; filter: drop-shadow(0 0 5px #FF69B4); }
+        .brain-15 path { stroke: #7ED957; filter: drop-shadow(0 0 5px #7ED957); }
+        @keyframes float1 {
+            0% { transform: translate(0, 0) scale(0.8) rotate(0deg); opacity: 0; }
+            25% { transform: translate(100px, 50px) scale(1) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-50px, 100px) scale(1.2) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(0.8) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float2 {
+            0% { transform: translate(0, 0) scale(1.2) rotate(0deg); opacity: 0; }
+            25% { transform: translate(-100px, -50px) scale(0.8) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(50px, -100px) scale(1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float3 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0; }
+            25% { transform: translate(80px, -80px) scale(1.2) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-80px, 80px) scale(0.8) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float4 {
+            0% { transform: translate(0, 0) scale(0.9) rotate(0deg); opacity: 0; }
+            25% { transform: translate(-120px, 60px) scale(1.1) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(60px, -120px) scale(1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(0.9) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float5 {
+            0% { transform: translate(0, 0) scale(1.1) rotate(0deg); opacity: 0; }
+            25% { transform: translate(90px, 90px) scale(0.9) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-90px, -90px) scale(1.1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1.1) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float6 {
+            0% { transform: translate(0, 0) scale(0.8) rotate(0deg); opacity: 0; }
+            25% { transform: translate(100px, 50px) scale(1) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-50px, 100px) scale(1.2) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(0.8) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float7 {
+            0% { transform: translate(0, 0) scale(1.2) rotate(0deg); opacity: 0; }
+            25% { transform: translate(-100px, -50px) scale(0.8) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(50px, -100px) scale(1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float8 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0; }
+            25% { transform: translate(80px, -80px) scale(1.2) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-80px, 80px) scale(0.8) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float9 {
+            0% { transform: translate(0, 0) scale(0.9) rotate(0deg); opacity: 0; }
+            25% { transform: translate(-120px, 60px) scale(1.1) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(60px, -120px) scale(1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(0.9) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float10 {
+            0% { transform: translate(0, 0) scale(1.1) rotate(0deg); opacity: 0; }
+            25% { transform: translate(90px, 90px) scale(0.9) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-90px, -90px) scale(1.1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1.1) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float11 {
+            0% { transform: translate(0, 0) scale(0.8) rotate(0deg); opacity: 0; }
+            25% { transform: translate(100px, 50px) scale(1) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-50px, 100px) scale(1.2) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(0.8) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float12 {
+            0% { transform: translate(0, 0) scale(1.2) rotate(0deg); opacity: 0; }
+            25% { transform: translate(-100px, -50px) scale(0.8) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(50px, -100px) scale(1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float13 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0; }
+            25% { transform: translate(80px, -80px) scale(1.2) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-80px, 80px) scale(0.8) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float14 {
+            0% { transform: translate(0, 0) scale(0.9) rotate(0deg); opacity: 0; }
+            25% { transform: translate(-120px, 60px) scale(1.1) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(60px, -120px) scale(1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(0.9) rotate(360deg); opacity: 0; }
+        }
+        @keyframes float15 {
+            0% { transform: translate(0, 0) scale(1.1) rotate(0deg); opacity: 0; }
+            25% { transform: translate(90px, 90px) scale(0.9) rotate(90deg); opacity: 0.4; }
+            75% { transform: translate(-90px, -90px) scale(1.1) rotate(270deg); opacity: 0.4; }
+            100% { transform: translate(0, 0) scale(1.1) rotate(360deg); opacity: 0; }
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .form-container {
+            background-color: transparent;
+            padding: 40px 30px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .button{
+            text-align: center;
+        }
+        h2 {
+            color: rgb(255, 255, 255);
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #ffffff;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: block;
+            color: rgb(255, 255, 255);
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-top: 0px solid #ffffff;
+            border-right: 0px solid #ffffff;
+            border-left: 0px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            font-size: 14px;
+            color: #ffffff;
+            background-color: transparent;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        #email::placeholder{
+            color: rgb(255, 255, 255);
+        }
+        #name::placeholder{
+            color: rgb(255, 255, 255);
+        }
+        #phone-no::placeholder{
+            color: rgb(255, 255, 255);
+        }
+        input:focus,
+        textarea:focus {
+            border-color: rgb(255, 255, 255);
+            outline: none;
+            color: white;
+        }
+        button {
+            width: auto;
+            padding: 14px 20px;
+            background-color: rgb(255, 255, 255);
+            color: midnightblue;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: rgb(218, 218, 218);
+            transform: scale(1.02);
+        }
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 6px rgba(0, 0, 87, 0.5);
+        }
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 30px 20px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="brain-pattern brain-1">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-2">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-3">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-4">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-5">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-6">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-7">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-8">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-9">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-10">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-11">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-12">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-13">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-14">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-15">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-16">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-17">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <div class="brain-pattern brain-18">
+        <svg viewBox="0 0 200 200">
+            <path fill="none" stroke-width="2"
+                d="M100 50 C120 50,140 70,140 90 C140 110,120 130,100 130 C80 130,60 110,60 90 C60 70,80 50,100 50" />
+        </svg>
+    </div>
+    <main>
+        <form class="form-container" action="#" method="post">
+            <h2>Welcome to BrainScanAI</h2>
+            <p>Fill out the form below to get started with BrainScanAI.</p>
+                <label for="email"><h3>Email Address</h3></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="name"><h3>Name</h3></label>
+                <input type="text" id="name" name="first_name" placeholder="Enter your name" required>
+                <label for="phone-no"><h3>Phone No.</h3></label>
+                <input type="text" id="phone-no" name="last_name" placeholder="Enter your Phone No." required>
+            <div class="button">
+                <button type="submit" onclick="window.location.href='https://sameersingh369.github.io/BSAIH/'">Submit</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
